@@ -1,0 +1,1430 @@
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  min-height:100%;
+  background:#030510;
+  color:#edf6ff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+button{
+  border:1px solid #293b70;
+  background:#0b1230;
+  color:#edf6ff;
+  border-radius:10px;
+  padding:11px 15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.18s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  border-color:#42eaff;
+  box-shadow:0 0 25px #25ddff30;
+}
+
+button:active{
+  transform:scale(.97);
+}
+
+.hidden{
+  display:none!important;
+}
+
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.screen{
+  display:none;
+  min-height:100vh;
+  position:relative;
+}
+
+.screen.active{
+  display:block;
+}
+
+.screen:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      #173e8830,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      #7928a525,
+      transparent 28%
+    ),
+    linear-gradient(
+      #02040d,
+      #080a1a
+    );
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  height:66px;
+
+  position:fixed;
+  z-index:50;
+
+  inset:0 0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 22px;
+
+  background:#050815e8;
+
+  border-bottom:1px solid #263660;
+
+  backdrop-filter:blur(12px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #25e8ff,
+      #7157ff
+    );
+
+  color:white;
+
+  font-size:24px;
+  font-weight:1000;
+
+  box-shadow:
+    0 0 28px #20ddff50;
+}
+
+.brand b{
+  display:block;
+  letter-spacing:3px;
+}
+
+.brand small{
+  display:block;
+
+  color:#65769c;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+
+  margin-top:2px;
+}
+
+.top-actions{
+  display:flex;
+  gap:7px;
+}
+
+.top-actions button{
+  padding:8px 11px;
+  font-size:17px;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+.hero{
+  position:relative;
+  z-index:2;
+
+  max-width:1100px;
+
+  min-height:100vh;
+
+  margin:auto;
+
+  padding:100px 22px 45px;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+.status{
+  color:#52eaff;
+
+  font-size:11px;
+
+  letter-spacing:4px;
+}
+
+.g4-badge{
+  margin-top:14px;
+
+  padding:6px 13px;
+
+  border:1px solid #755dff;
+
+  border-radius:30px;
+
+  background:#17123c;
+
+  color:#bcb2ff;
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:3px;
+
+  box-shadow:
+    0 0 20px #765cff25;
+}
+
+.hero h1{
+  margin:18px 0 0;
+
+  font-size:
+    clamp(76px,15vw,155px);
+
+  line-height:.8;
+
+  letter-spacing:-8px;
+
+  text-shadow:
+    0 0 25px #2be4ff55,
+    0 0 80px #6f5bff35;
+}
+
+.hero h1 span{
+  color:#43eaff;
+}
+
+.hero h2{
+  margin:15px 0 0;
+
+  font-size:15px;
+
+  letter-spacing:8px;
+
+  color:#8291b7;
+}
+
+.lead{
+  color:#b0bdd8;
+
+  font-size:18px;
+}
+
+
+/* =========================
+   LAS 3 BASES
+========================= */
+
+.pillars{
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
+
+  margin:30px 0;
+}
+
+.pillars article{
+  position:relative;
+
+  overflow:hidden;
+
+  text-align:left;
+
+  padding:22px;
+
+  border:1px solid #273963;
+
+  background:#091027dd;
+
+  border-radius:17px;
+
+  transition:.25s;
+}
+
+.pillars article:hover{
+  transform:translateY(-5px);
+
+  border-color:#42eaff;
+
+  box-shadow:
+    0 0 30px #25ddff22;
+}
+
+.pillars article:after{
+  content:"";
+
+  position:absolute;
+
+  width:120px;
+  height:120px;
+
+  right:-50px;
+  bottom:-60px;
+
+  background:#25dfff18;
+
+  border-radius:50%;
+
+  filter:blur(7px);
+}
+
+.pillar-icon{
+  font-size:29px;
+  color:#5deaff;
+}
+
+.pillars h3{
+  margin:8px 0;
+
+  color:#5eeaff;
+
+  letter-spacing:2px;
+}
+
+.pillars p{
+  margin:0;
+
+  color:#a8b5d1;
+
+  line-height:1.5;
+
+  font-size:13px;
+}
+
+
+/* =========================
+   BOTONES MENÚ
+========================= */
+
+.menu-buttons{
+  display:flex;
+
+  gap:10px;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+.big{
+  padding:14px 20px;
+}
+
+.primary{
+  background:
+    linear-gradient(
+      135deg,
+      #18dfff,
+      #7458ff
+    );
+
+  border:0;
+
+  box-shadow:
+    0 0 25px #2be4ff25;
+}
+
+.menu-stats{
+  margin-top:25px;
+
+  display:flex;
+
+  gap:20px;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  color:#7584a5;
+
+  font-size:10px;
+}
+
+.menu-stats b{
+  color:#e0eaff;
+
+  margin-left:3px;
+}
+
+
+/* =========================
+   GAME LAYOUT
+========================= */
+
+.game-layout{
+  position:relative;
+  z-index:2;
+
+  max-width:1540px;
+
+  margin:82px auto 18px;
+
+  padding:0 16px;
+
+  display:grid;
+
+  grid-template-columns:
+    270px 1fr;
+
+  gap:14px;
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+.hud{
+  background:#070c1ff2;
+
+  border:1px solid #273961;
+
+  border-radius:16px;
+
+  padding:15px;
+
+  box-shadow:
+    0 20px 60px #0009;
+
+  align-self:start;
+}
+
+.hud-head{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:16px;
+
+  letter-spacing:2px;
+}
+
+.hud-head span{
+  font-size:9px;
+  color:#55e9ff;
+}
+
+.player-card{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:10px;
+
+  border:1px solid #25365e;
+
+  background:#0d1430;
+
+  border-radius:11px;
+
+  margin-bottom:14px;
+}
+
+.avatar{
+  width:42px;
+  height:42px;
+
+  border-radius:11px;
+
+  display:grid;
+  place-items:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #26e2ff,
+      #6e58ff
+    );
+
+  font-size:20px;
+
+  font-weight:1000;
+
+  box-shadow:
+    0 0 18px #2ee5ff35;
+}
+
+.player-card b{
+  display:block;
+  font-size:11px;
+}
+
+.player-card small{
+  color:#7888aa;
+  font-size:10px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stat{
+  margin:12px 0;
+}
+
+.stat label{
+  display:flex;
+
+  justify-content:space-between;
+
+  color:#8f9fbd;
+
+  font-size:10px;
+
+  margin-bottom:5px;
+}
+
+.bar{
+  height:8px;
+
+  background:#151d38;
+
+  border-radius:10px;
+
+  overflow:hidden;
+}
+
+.bar i{
+  display:block;
+
+  height:100%;
+
+  width:100%;
+
+  transition:width .2s;
+
+  background:
+    linear-gradient(
+      90deg,
+      #31dfff,
+      #6658ff
+    );
+
+  box-shadow:
+    0 0 10px #36e5ff66;
+}
+
+.bar.hp i{
+  background:
+    linear-gradient(
+      90deg,
+      #ff3f69,
+      #ff9b45
+    );
+}
+
+.bar.energy i{
+  background:
+    linear-gradient(
+      90deg,
+      #9d4dff,
+      #31e5ff
+    );
+}
+
+.bar.xp i{
+  background:
+    linear-gradient(
+      90deg,
+      #ffd04d,
+      #52ffb4
+    );
+}
+
+
+/* =========================
+   QUICK STATS
+========================= */
+
+.quick-stats{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:5px;
+
+  margin:15px 0;
+}
+
+.quick-stats span{
+  text-align:center;
+
+  padding:8px 3px;
+
+  border-radius:8px;
+
+  background:#101934;
+
+  border:1px solid #263760;
+
+  font-size:11px;
+}
+
+
+/* =========================
+   ARMA EQUIPADA
+========================= */
+
+.equipped-card{
+  padding:12px;
+
+  margin:10px 0;
+
+  border:1px solid #31507c;
+
+  background:
+    linear-gradient(
+      135deg,
+      #101a38,
+      #151134
+    );
+
+  border-radius:11px;
+
+  box-shadow:
+    inset 0 0 20px #2be5ff08;
+}
+
+.equipped-card small{
+  display:block;
+
+  color:#687ba2;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+}
+
+.equipped-card b{
+  display:block;
+
+  margin:6px 0;
+
+  color:#64eaff;
+
+  font-size:12px;
+}
+
+.equipped-card span{
+  color:#99a8c6;
+
+  font-size:9px;
+}
+
+.equipped-card strong{
+  color:#fff;
+}
+
+
+/* =========================
+   HABILIDAD
+========================= */
+
+.skill-card{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  border:1px solid #513f91;
+
+  background:
+    linear-gradient(
+      135deg,
+      #151239,
+      #211343
+    );
+
+  padding:11px;
+
+  border-radius:10px;
+
+  margin:10px 0;
+
+  box-shadow:
+    0 0 18px #865bff12;
+}
+
+.skill-card b{
+  display:block;
+
+  font-size:11px;
+
+  color:#d8d0ff;
+}
+
+.skill-card small{
+  display:block;
+
+  color:#7886a9;
+
+  font-size:9px;
+
+  margin-top:3px;
+}
+
+.skill-card span{
+  font-size:9px;
+
+  color:#57eaff;
+
+  white-space:nowrap;
+}
+
+
+/* =========================
+   MISIÓN
+========================= */
+
+.mission{
+  padding:12px;
+
+  border-radius:10px;
+
+  background:#0c1430;
+
+  border:1px solid #2b3d6a;
+
+  margin:10px 0;
+}
+
+.mission small{
+  display:block;
+
+  color:#63759b;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+.mission b{
+  display:block;
+
+  font-size:12px;
+
+  margin:6px 0;
+}
+
+.mission span{
+  font-size:10px;
+
+  color:#53eaff;
+}
+
+
+/* =========================
+   BOTONES HUD
+========================= */
+
+.hud>button{
+  width:100%;
+
+  margin-top:7px;
+}
+
+
+/* =========================
+   ARENA
+========================= */
+
+.arena{
+  position:relative;
+
+  border:1px solid #293c6b;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  background:#050916;
+
+  box-shadow:
+    0 20px 70px #0009;
+}
+
+.arena canvas{
+  display:block;
+
+  width:100%;
+
+  height:auto;
+
+  image-rendering:auto;
+}
+
+
+/* =========================
+   SECTOR / OLEADA
+========================= */
+
+.sector-banner{
+  position:absolute;
+
+  top:15px;
+  left:15px;
+
+  color:#6cecff;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  padding:7px 10px;
+
+  border:1px solid #2d4a7a;
+
+  background:#060b1acc;
+
+  border-radius:9px;
+}
+
+.wave{
+  position:absolute;
+
+  top:15px;
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  padding:7px 14px;
+
+  border:1px solid #32477a;
+
+  background:#070d22dd;
+
+  border-radius:20px;
+
+  color:#aab9d7;
+
+  font-size:10px;
+}
+
+
+/* =========================
+   JEFE
+========================= */
+
+.boss-ui{
+  position:absolute;
+
+  top:50px;
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  width:min(500px,65%);
+
+  padding:8px 12px;
+
+  text-align:center;
+
+  background:#0b0814ee;
+
+  border:1px solid #ff416c;
+
+  border-radius:10px;
+
+  color:#ff7892;
+
+  font-size:11px;
+
+  box-shadow:
+    0 0 30px #ff416c18;
+}
+
+.bossbar{
+  height:8px;
+
+  background:#29131d;
+
+  border-radius:10px;
+
+  margin-top:6px;
+
+  overflow:hidden;
+}
+
+.bossbar i{
+  display:block;
+
+  width:100%;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff315d,
+      #ffb13a
+    );
+}
+
+
+/* =========================
+   COMBO
+========================= */
+
+.combo-display{
+  position:absolute;
+
+  right:16px;
+  top:15px;
+
+  padding:8px 12px;
+
+  border:1px solid #563e88;
+
+  background:#100d25cc;
+
+  border-radius:9px;
+
+  color:#a995ff;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  opacity:.9;
+}
+
+.combo-display span{
+  color:#fff;
+}
+
+
+/* =========================
+   MENSAJE DE JUEGO
+========================= */
+
+.game-message{
+  position:absolute;
+
+  left:50%;
+  top:42%;
+
+  transform:
+    translate(-50%,-50%);
+
+  pointer-events:none;
+
+  color:#fff;
+
+  font-size:24px;
+
+  font-weight:1000;
+
+  letter-spacing:2px;
+
+  text-shadow:
+    0 0 20px #38eaff;
+
+  opacity:0;
+}
+
+
+/* =========================
+   CONTROLES
+========================= */
+
+.objective{
+  position:absolute;
+
+  bottom:10px;
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size:9px;
+
+  color:#69799b;
+
+  white-space:nowrap;
+
+  background:#050914bb;
+
+  padding:6px 9px;
+
+  border-radius:7px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+
+  z-index:100;
+
+  inset:0;
+
+  background:#02040bdd;
+
+  display:grid;
+
+  place-items:center;
+
+  padding:20px;
+
+  backdrop-filter:blur(6px);
+}
+
+.modal-card{
+  position:relative;
+
+  width:min(650px,100%);
+
+  max-height:88vh;
+
+  overflow:auto;
+
+  background:#080e23;
+
+  border:1px solid #334878;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  box-shadow:
+    0 30px 100px #000;
+}
+
+.modal-card h2{
+  margin:0 0 18px;
+
+  color:#58e9ff;
+
+  letter-spacing:2px;
+}
+
+.close{
+  position:absolute;
+
+  right:10px;
+  top:10px;
+
+  border:0;
+
+  background:transparent;
+
+  font-size:24px;
+
+  padding:5px;
+}
+
+.close:hover{
+  background:#ff416c20;
+
+  color:#ff7892;
+
+  box-shadow:none;
+}
+
+
+/* =========================
+   MODAL GRID
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px;
+}
+
+.control{
+  padding:14px;
+
+  background:#101936;
+
+  border:1px solid #263961;
+
+  border-radius:10px;
+
+  color:#aebbd4;
+
+  line-height:1.5;
+}
+
+.control b{
+  color:#5ceaff;
+}
+
+
+/* =========================
+   ARMAS / HABILIDADES
+========================= */
+
+.shop-item,
+.skill-shop-item,
+.inv-item{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:13px;
+
+  margin:9px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #101936,
+      #0d1530
+    );
+
+  border:1px solid #263961;
+
+  border-radius:11px;
+
+  transition:.2s;
+}
+
+.shop-item:hover,
+.skill-shop-item:hover,
+.inv-item:hover{
+  border-color:#43e7ff;
+
+  transform:translateX(2px);
+}
+
+.shop-item b,
+.skill-shop-item b{
+  color:#dfeaff;
+
+  font-size:12px;
+}
+
+.shop-item small,
+.skill-shop-item small,
+.inv-item small{
+  display:block;
+
+  color:#7687a8;
+
+  margin-top:4px;
+
+  line-height:1.4;
+}
+
+.item-icon{
+  width:42px;
+  height:42px;
+
+  flex:none;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:10px;
+
+  background:#151f43;
+
+  border:1px solid #304575;
+
+  font-size:21px;
+}
+
+.item-info{
+  flex:1;
+}
+
+.item-price{
+  color:#ffd55b;
+
+  font-size:10px;
+
+  margin-top:5px;
+}
+
+.buy-button{
+  padding:8px 10px;
+
+  white-space:nowrap;
+}
+
+.equipped{
+  color:#57eaff;
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+.locked{
+  color:#ff7a91;
+
+  font-size:9px;
+
+  font-weight:900;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.notice{
+  padding:12px;
+
+  border-left:
+    3px solid #43e7ff;
+
+  background:#101936;
+
+  color:#aebbd4;
+
+  line-height:1.5;
+
+  border-radius:6px;
+
+  margin-top:10px;
+}
+
+
+/* =========================
+   CARGA
+========================= */
+
+#boot{
+  position:fixed;
+
+  z-index:200;
+
+  inset:0;
+
+  background:#03050d;
+
+  display:grid;
+
+  place-items:center;
+
+  align-content:center;
+
+  gap:12px;
+}
+
+.boot-logo{
+  font-size:55px;
+
+  font-weight:1000;
+
+  letter-spacing:-3px;
+}
+
+.boot-logo span{
+  color:#42eaff;
+}
+
+.boot-version{
+  color:#765cff;
+
+  font-size:10px;
+
+  letter-spacing:5px;
+
+  font-weight:900;
+}
+
+.loader{
+  width:240px;
+
+  height:5px;
+
+  background:#121a31;
+
+  border-radius:9px;
+
+  overflow:hidden;
+}
+
+.loader i{
+  display:block;
+
+  width:45%;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #32eaff,
+      #765bff
+    );
+
+  animation:
+    load 1s ease-in-out infinite;
+}
+
+@keyframes load{
+
+  from{
+    transform:translateX(-120%);
+  }
+
+  to{
+    transform:translateX(550%);
+  }
+
+}
+
+#boot small{
+  color:#596989;
+
+  font-size:9px;
+
+  letter-spacing:3px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .pillars{
+    grid-template-columns:1fr;
+  }
+
+  .game-layout{
+    grid-template-columns:1fr;
+  }
+
+  .hud{
+    order:2;
+  }
+
+  .arena{
+    order:1;
+  }
+
+  .objective{
+    display:none;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .topbar{
+    padding:0 10px;
+  }
+
+  .brand small{
+    display:none;
+  }
+
+  .hero{
+    padding:
+      100px 12px 35px;
+  }
+
+  .hero h1{
+    letter-spacing:-4px;
+  }
+
+  .hero h2{
+    letter-spacing:5px;
+  }
+
+  .menu-stats{
+    gap:9px;
+  }
+
+  .game-layout{
+    padding:0 7px;
+  }
+
+  .hud{
+    padding:12px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .boss-ui{
+    width:80%;
+  }
+
+  .combo-display{
+    top:52px;
+  }
+
+}
